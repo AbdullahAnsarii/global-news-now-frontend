@@ -1,5 +1,7 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import Image from 'next/image';
+import '../styles/globals.css';
+import { Inter } from 'next/font/google';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +17,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className='bg-slate-400'>
+          <section className='flex justify-between max-w-7xl mx-auto py-6 bg-slate-300'>
+            <div className='flex gap-6 bg-slate-200'>
+              <Image src="/next.svg" alt="Chest.js" width="100" height="100" />
+              <Link className='hover:text-white transition-all duration-500' href="/">Link</Link>
+              <Link className='hover:text-white' href="/">Link</Link>
+              <Link className='hover:text-white' href="/">Link</Link>
+              <Link className='hover:text-white' href="/">Link</Link>
+              <Link className='hover:text-white' href="/">Link</Link>
+            </div>
+
+            <div className='flex gap-6 bg-slate-200'>
+              <span>Search</span>
+              <span>Profile</span>
+            </div>
+          </section>
+        </header>
+
+        {children}
+        
+        <footer className='bg-black'>
+          <section className="flex justify-between max-w-7xl mx-auto py-6">
+
+          </section>
+        </footer>
+      </body>
     </html>
   )
 }

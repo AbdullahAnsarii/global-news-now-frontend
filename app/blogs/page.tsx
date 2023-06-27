@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div >Mawad!</div>
+  return <h1>Hello, Next.js!</h1>
 }
