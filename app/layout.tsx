@@ -18,30 +18,78 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className='bg-slate-400'>
-          <section className='flex justify-between max-w-7xl mx-auto py-6 bg-slate-300'>
-            <div className='flex gap-6 bg-slate-200'>
-              <Image src="/next.svg" alt="Chest.js" width="100" height="100" />
-              <Link className='hover:text-white transition-all duration-500' href="/">Link</Link>
-              <Link className='hover:text-white' href="/">Link</Link>
-              <Link className='hover:text-white' href="/">Link</Link>
-              <Link className='hover:text-white' href="/">Link</Link>
-              <Link className='hover:text-white' href="/">Link</Link>
+        <header className='border-b border-slate-200'>
+          <section className='flex justify-between max-w-7xl mx-auto py-2'>
+            <div className='flex items-center gap-6 max-w-[800px] overflow-hidden'>
+              <Image src="/logo-black.svg" alt="Global News Now Logo" title="Global News Now Logo" width="60" height="60" />
+              <div className='h-full w-[1px] bg-slate-200' />
+              <Link className='hover:text-slate-600 font-bold transition-all duration-500' href="/">Link</Link>
+              <Link className='hover:text-slate-600 font-bold' href="/">Trend</Link>
+              <Link className='hover:text-slate-600 font-bold' href="/">Tech</Link>
+              <Link className='hover:text-slate-600 font-bold' href="/">Finance</Link>
+              <Link className='hover:text-slate-600 font-bold' href="/">Link</Link>
+              <Link className='hover:text-slate-600 font-bold' href="/">Link</Link>
+              <Link className='hover:text-slate-600 font-bold' href="/">Link</Link>
             </div>
 
-            <div className='flex gap-6 bg-slate-200'>
-              <span>Search</span>
-              <span>Profile</span>
+            <div className='flex items-center gap-6'>
+
+              <form>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  </div>
+                  <input type="search" id="default-search" className="min-w-[320px] focus:outline-none block w-full p-2 pl-10 text-xs text-gray-900 border border-gray-300 rounded-sm" placeholder="Search Global News Now" required />
+                  <button type="submit" className="text-white absolute right-0 bottom-0 bg-black hover:bg-slate-800 text-xs rounded-r-sm px-3 h-full">Search</button>
+                </div>
+              </form>
+
+              <Image src="/profile.svg" alt="Profile" title="Profile" width="30" height="30" />
             </div>
           </section>
         </header>
 
         {children}
-        
-        <footer className='bg-black'>
-          <section className="flex justify-between max-w-7xl mx-auto py-6">
 
+        <footer className='bg-black'>
+          <section className="flex gap-16 max-w-7xl mx-auto py-6">
+            <div className='w-[50%] flex flex-col gap-16'>
+              <Image src="/logo-white.svg" alt="Global News Now Logo" title="Global News Now Logo" width="120" height="120" />
+              <div className='flex flex-col gap-4'>
+                <p className='font-bold text-slate-200'>Explore</p>
+                <div className='flex gap-2'>
+                  <Link className='text-slate-200 hover:text-slate-50 text-xs border-r border-slate-200 pr-2' href="/">Trend</Link>
+                  <Link className='text-slate-200 hover:text-slate-50 text-xs border-r border-slate-200 pr-2' href="/">Tech</Link>
+                  <Link className='text-slate-200 hover:text-slate-50 text-xs border-r border-slate-200 pr-2' href="/">Finance</Link>
+                  <Link className='text-slate-200 hover:text-slate-50 text-xs border-r border-slate-200 pr-2' href="/">Link</Link>
+                  <Link className='text-slate-200 hover:text-slate-50 text-xs border-r border-slate-200 pr-2' href="/">Link</Link>
+                  <Link className='text-slate-200 hover:text-slate-50 text-xs' href="/">Link</Link>
+                </div>
+
+              </div>
+            </div>
+            <div className='w-[50%] flex flex-col justify-between'>
+              <div className='flex flex-col gap-4'>
+                <p className='font-bold text-slate-200'>Subscribe</p>
+                <form>
+                  <div className="flex items-center gap-2 flex-grow">
+                    <input type="search" id="default-search" className="min-w-[400px] focus:outline-none block p-3 text-sm text-slate-200 bg-black border border-slate-200 rounded-sm" placeholder="Email address" required />
+                    <button type="submit" className="bg-slate-200 hover:bg-slate-50 text-sm rounded-sm p-3">Submit</button>
+                  </div>
+                </form>
+              </div>
+              <div className='flex flex-col gap-4'>
+                <p className='font-bold text-slate-200'>Follow us on social media</p>
+                <div className='flex gap-8'>
+                  <Image src="/instagram.svg" alt="Instagram Logo" title="Instagram Logo" width="32" height="32" />
+                  <Image src="/facebook.svg" alt="Facebook Logo" title="Facebook Logo" width="32" height="32" />
+                  <Image src="/twitter.svg" alt="Twitter Now Logo" title="Twitter Now Logo" width="32" height="32" />
+                </div>
+              </div>
+            </div>
           </section>
+          <p className='text-xs text-slate-200 text-center border-t py-2'>Copyright &copy; {(new Date().getFullYear())} Global News Now</p>
+
         </footer>
       </body>
     </html>

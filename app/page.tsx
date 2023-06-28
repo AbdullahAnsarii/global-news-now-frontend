@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div >Mawad!</div>
+  return <div className="h-[50vh]" >Mawad!</div>
 }
