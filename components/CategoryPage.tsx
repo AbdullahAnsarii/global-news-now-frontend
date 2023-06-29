@@ -82,7 +82,7 @@ export default async function CategoryPage({ slug, searchParams }: { slug: strin
                         <div className="flex flex-wrap gap-6">
                             {blogs.slice(1).map(blog => (
                                 <div key={blog.id} className='relative h-[100px] md:h-[calc(200px-1rem)] w-[calc(50%-0.75rem)]'>
-                                    <Link  href={`/${categoryDetails.slug}/${blog?.slug}`} >
+                                    <Link href={`/${categoryDetails.slug}/${blog?.slug}`} >
                                         <Image src={blog?.image || ""} alt={blog?.title} title={blog?.title} fill style={{
                                             objectFit: 'cover',
                                             borderRadius: '0.25rem'
@@ -108,7 +108,8 @@ export default async function CategoryPage({ slug, searchParams }: { slug: strin
                                     <li key={pageNumber}>
                                         <Link
                                             href={`/${categoryDetails.slug}?pageNumber=${pageNumber}`}
-                                            className={`${Number(searchParams?.pageNumber) === pageNumber ? "text-zinc-200 bg-zinc-800" : "text-zinc-800 bg-white hover:bg-zinc-800 hover:text-zinc-200"} border border-zinc-300  px-3 py-2 leading-tight`}>
+                                            className={`${(Number(searchParams?.pageNumber ? searchParams?.pageNumber : 1) === pageNumber) ?
+                                                "text-zinc-200 bg-zinc-800" : "text-zinc-800 bg-white hover:bg-zinc-800 hover:text-zinc-200"} border border-zinc-300  px-3 py-2 leading-tight`}>
                                             {pageNumber}
                                         </Link>
                                     </li>

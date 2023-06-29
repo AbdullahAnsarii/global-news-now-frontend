@@ -6,6 +6,6 @@ export default async function CategoryAndBlog({ params, searchParams }: { params
   
   if(params.slug.length === 1) return <CategoryPage slug={params.slug[0]} searchParams={searchParams} />
 
-  else if (params.slug.length === 2) return <BlogPage slug={params.slug[1]} />
+  else if (params.slug.length === 2) return <BlogPage categorySlug={params.slug[0]} blogSlug={params.slug[1]} />
 
 }
