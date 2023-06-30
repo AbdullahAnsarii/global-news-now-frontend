@@ -42,11 +42,11 @@ export default async function BlogPage({ categorySlug, blogSlug }: { categorySlu
     latestBlogs = data[2];
 
     return (
-        <section className="my-8 max-w-7xl mx-auto">
+        <section className="my-8 max-w-7xl mx-auto text-zinc-800">
             <nav className="flex" aria-label="Breadcrumb">
                 <ol className="inline-flex items-center space-x-1 md:space-x-3">
                     <li className="inline-flex items-center">
-                        <a href="/" className="inline-flex items-center text-xs text-zinc-600 hover:text-zinc-900">
+                        <a href="/" className="inline-flex items-center text-xs text-zinc-600 hover:text-zinc-800">
                             Home
                         </a>
                     </li>
@@ -73,12 +73,12 @@ export default async function BlogPage({ categorySlug, blogSlug }: { categorySlu
                         }} />
                     </div>
                     {blog?.createdAt && <p className="text-zinc-400 text-xs mt-2">{convertDate(blog.createdAt, "MM dd,yy")}</p>}
-                    <h1 className="text-zinc-800 line-clamp-2 text-2xl font-bold my-4">{blog?.title}</h1>
+                    <h1 className="line-clamp-2 text-2xl font-bold my-4">{blog?.title}</h1>
                     <div dangerouslySetInnerHTML={{__html: blog?.content || ""}} />
                 </div>
 
                 <div className="w-[40%] flex flex-col gap-10">
-                    <div className="border-l-4 border-black">
+                    <div className="border-l-4 border-zinc-800">
                         <p className="p-2">Latest Articles</p>
                     </div>
 
@@ -93,7 +93,7 @@ export default async function BlogPage({ categorySlug, blogSlug }: { categorySlu
                                         }} />
                                     </div>
                                     <div className="w-[75%] flex flex-col gap-2">
-                                        <p className="line-clamp-1 text-zinc-800">{blog.title}</p>
+                                        <p className="line-clamp-1">{blog.title}</p>
                                         <p className="text-zinc-400 text-xs">{convertDate(blog.createdAt, "MM dd,yy")}</p>
                                     </div>
                                 </div>

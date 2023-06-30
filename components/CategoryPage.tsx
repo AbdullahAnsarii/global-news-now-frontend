@@ -57,7 +57,7 @@ export default async function CategoryPage({ slug, searchParams }: { slug: strin
     const paginationArray = createArrayFromNumber(numberOfPages);
 
     return (
-        <section className="my-8">
+        <section className="my-8 text-zinc-800">
             <div className="bg-zinc-800">
                 <h1 className="max-w-7xl mx-auto py-2 text-zinc-200 text-5xl font-bold">{categoryDetails.title}</h1>
             </div>
