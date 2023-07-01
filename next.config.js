@@ -8,6 +8,11 @@ const nextConfig = {
                 port: '',
                 pathname: '/1200/800',
             },
+            {
+                protocol: 'https',
+                hostname: 'ik.imagekit.io',
+                port: ''
+            }
         ],
     },
 }

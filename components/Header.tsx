@@ -10,7 +10,12 @@ export async function Header({ headerLinks }: { headerLinks: Category[] }) {
             <section className='flex justify-between max-w-7xl mx-auto py-2'>
                 <div className='flex items-center gap-6 max-w-[800px] overflow-hidden'>
                     <Link href="/">
-                        <Image src="/logo-black.svg" alt="Global News Now Logo" title="Global News Now Logo" width={60} height={60} />
+                        <div className='relative h-[60px] w-[60px]'>
+                            <Image src="/logo-black.svg" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
+                                objectFit: 'contain',
+                                borderRadius: '0.25rem'
+                            }} />
+                        </div>
                     </Link>
                     <div className='h-full w-[1px] bg-zinc-200' />
                     {headerLinks.slice(0, 5).map(link => (

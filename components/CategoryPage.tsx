@@ -24,7 +24,9 @@ export default async function CategoryPage({ slug, searchParams }: { slug: strin
                 + new URLSearchParams({
                     categoryId: categoryDetails.id.toString(),
                     perPage: "5",
-                    page: searchParams?.pageNumber ? searchParams?.pageNumber.toString() : "1"
+                    page: searchParams?.pageNumber ? searchParams?.pageNumber.toString() : "1",
+                    sortByField: "createdAt",
+                    sortOrder: "desc"
                 }), {
                 method: "GET",
                 cache: "no-store"

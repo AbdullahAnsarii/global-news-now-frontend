@@ -9,7 +9,12 @@ export async function Footer({ headerLinks }: { headerLinks: Category[] }) {
         <footer className='bg-zinc-900'>
             <section className="flex gap-16 max-w-7xl mx-auto py-6">
                 <div className='w-[50%] flex flex-col gap-16'>
-                    <Image priority={true} src="/logo-white.svg" alt="Global News Now Logo" title="Global News Now Logo" width="140" height="140" />
+                    <div className='relative h-[140px] w-[140px]'>
+                        <Image src="/logo-white.svg" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
+                            objectFit: 'contain',
+                            borderRadius: '0.25rem'
+                        }} />
+                    </div>
                     <div className='flex flex-col gap-4'>
                         <p className='font-bold text-zinc-200'>Explore</p>
                         <div className='flex gap-2'>

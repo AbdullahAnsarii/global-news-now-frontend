@@ -37,7 +37,7 @@ export default function Dashboard({ access_token }: { access_token: string }) {
         <section>
             <h1 className="mb-3">Super Admin Dashboard</h1>
             <p>Hello, {admin?.firstName}&nbsp;{admin?.lastName}</p>
-            <div className="flex gap-4 my-8">
+            {admin?.superAdmin ? <div className="flex gap-4 my-8">
                 <button
                     onClick={() => router.push("/admin/category")}
                     className="text-white bg-zinc-800 p-2 rounded text-sm">
@@ -58,7 +58,7 @@ export default function Dashboard({ access_token }: { access_token: string }) {
                     className="text-white bg-zinc-800 p-2 rounded text-sm">
                     Signout
                 </button>
-            </div>
+            </div> : <p>You are not allowed to access this resource</p>}
         </section>
     )
 }
