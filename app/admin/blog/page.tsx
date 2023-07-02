@@ -1,14 +1,14 @@
 "use client"
-
+import dynamic from "next/dynamic";
 import { BASE_URL_SERVER } from "@/common";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { slugify } from "@/helpers/slugify";
 import { Category, UploadedImage } from "@/types";
-import ReactQuill from 'react-quill';
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 import 'react-quill/dist/quill.snow.css';
 import { IKContext, IKUpload } from 'imagekitio-react';
-import Script from "next/script";
+
 
 export default function Blog() {
     const [categories, setCategories] = useState<Category[]>([])
@@ -22,7 +22,7 @@ export default function Blog() {
     const urlEndpoint = 'https://ik.imagekit.io/globalnewsnow';
     const publicKey = 'public_Z45LJa4cyU3KNfm0AD7JQss7Fhg=';
     const authenticationEndpoint = 'https://globalnewsnow.cyclic.app/auth/imgkit';
-    
+
     const onError = (err: any) => {
         console.log("Error", err);
         setMessage("Something bad happened")
@@ -76,7 +76,6 @@ export default function Blog() {
             setMessage("");
         }, 3000)
     }
-    console.log(content)
 
     return (
         <section className="my-8 max-w-7xl mx-auto text-zinc-800 ">
@@ -102,15 +101,15 @@ export default function Blog() {
                 <p className="mt-16 font-bold">Category ({categories.find(category => category.id === categoryId)?.title})</p>
 
                 {categories.map(link => (
-                    <ul onClick={() =>setCategoryId(link.id)} key={link.id} className="text-sm text-blue-700 cursor-pointer">
+                    <ul onClick={() => setCategoryId(link.id)} key={link.id} className="text-sm text-blue-700 cursor-pointer">
                         <li className='px-4 py-2 text-sm bg-zinc-200'>
-                                {link.title}
+                            {link.title}
                         </li>
                     </ul>
                 ))}
 
                 <div className="mb-10">
-                <p className="mt-6 font-bold">Content</p>
+                    <p className="mt-6 font-bold">Content</p>
                     <ReactQuill theme="snow" value={content} onChange={setContent} style={{ height: '400px' }} />
                 </div>
                 {/* @ts-ignore */}
