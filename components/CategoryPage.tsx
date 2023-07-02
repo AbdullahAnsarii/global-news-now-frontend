@@ -59,14 +59,14 @@ export default async function CategoryPage({ slug, searchParams }: { slug: strin
     const paginationArray = createArrayFromNumber(numberOfPages);
 
     return (
-        <section className="my-8 text-zinc-800">
+        <section className="my-8 text-zinc-800 ">
             <div className="bg-zinc-800">
-                <h1 className="max-w-7xl mx-auto py-2 text-zinc-200 text-5xl font-bold">{categoryDetails.title}</h1>
+                <h1 className="max-w-7xl mx-auto py-2 text-zinc-200 text-5xl font-bold px-4 xl:px-0">{categoryDetails.title}</h1>
             </div>
 
-            {blogs.length > 0 && <div className="max-w-7xl mx-auto my-10">
+            {blogs.length > 0 && <div className="max-w-7xl mx-auto my-10 px-4 xl:px-0">
                 <Link href={`/${categoryDetails.slug}/${blogs[0]?.slug}`} >
-                    <div className='relative h-[200px] md:h-[500px] w-full'>
+                    <div className='relative h-[250px] md:h-[500px] w-full'>
                         <Image src={blogs[0]?.image || ""} alt={blogs[0]?.title} title={blogs[0]?.title} fill style={{
                             objectFit: 'cover',
                             borderRadius: '0.25rem'
@@ -78,12 +78,12 @@ export default async function CategoryPage({ slug, searchParams }: { slug: strin
                 </Link>
             </div>}
 
-            <div className="max-w-7xl mx-auto my-8 w-full flex gap-12">
+            <div className="max-w-7xl mx-auto my-8 w-full flex flex-col md:flex-row gap-12 px-4 xl:px-0">
                 {blogs.length > 1 &&
-                    <div className="w-[60%] flex flex-col gap-10">
+                    <div className="w-full md:w-[60%] flex flex-col gap-10">
                         <div className="flex flex-wrap gap-6">
                             {blogs.slice(1).map(blog => (
-                                <div key={blog.id} className='relative h-[100px] md:h-[calc(200px-1rem)] w-[calc(50%-0.75rem)]'>
+                                <div key={blog.id} className='relative h-[150px] md:h-[calc(200px-1rem)] w-[calc(50%-0.75rem)]'>
                                     <Link href={`/${categoryDetails.slug}/${blog?.slug}`} >
                                         <Image src={blog?.image || ""} alt={blog?.title} title={blog?.title} fill style={{
                                             objectFit: 'cover',
@@ -97,7 +97,7 @@ export default async function CategoryPage({ slug, searchParams }: { slug: strin
                             ))}
 
                         </div>
-                        <nav aria-label="Page navigation example" className="self-center">
+                        <nav aria-label="Page navigation example" className="self-center mx-4">
                             <ul className="inline-flex -space-x-px">
                                 {Number(searchParams?.pageNumber) > 1 && <li>
                                     <Link
@@ -128,7 +128,7 @@ export default async function CategoryPage({ slug, searchParams }: { slug: strin
                     </div>
                 }
 
-                <div className="w-[40%] flex flex-col gap-10">
+                <div className="w-full md:w-[40%] flex flex-col gap-10">
                     <div className="border-l-4 border-black">
                         <p className="p-2">Latest Articles</p>
                     </div>

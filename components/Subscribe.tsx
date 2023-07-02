@@ -37,7 +37,7 @@ export function Subscribe() {
             <form onSubmit={handleSubscribe}>
                 <p className="text-zinc-200 text-xs mb-2">{message}</p>
                 <div className="flex items-center gap-2 flex-grow">
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="min-w-[400px] focus:outline-none block p-3 text-sm text-zinc-200 bg-zinc-900 border border-zinc-200 rounded-sm" placeholder="Email address" required />
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="w-[250px] md:w-[400px] focus:outline-none block p-3 text-sm text-zinc-200 bg-zinc-900 border border-zinc-200 rounded-sm" placeholder="Email address" required />
                     <button type="submit" className="bg-zinc-200 hover:bg-zinc-50 text-sm rounded-sm p-3">Submit</button>
                 </div>
             </form>

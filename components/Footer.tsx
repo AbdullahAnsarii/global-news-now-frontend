@@ -6,9 +6,9 @@ import { Subscribe } from "./Subscribe";
 
 export async function Footer({ headerLinks }: { headerLinks: Category[] }) {
     return (
-        <footer className='bg-zinc-900'>
-            <section className="flex gap-16 max-w-7xl mx-auto py-6">
-                <div className='w-[50%] flex flex-col gap-16'>
+        <footer className='bg-zinc-900 px-4 xl:px-0'>
+            <section className="flex flex-col lg:flex-row gap-16 max-w-7xl mx-auto py-6">
+                <div className='w-full lg:w-[50%] flex flex-col gap-16'>
                     <div className='relative h-[140px] w-[140px]'>
                         <Image src="/logo-white.svg" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
                             objectFit: 'contain',
@@ -28,7 +28,7 @@ export async function Footer({ headerLinks }: { headerLinks: Category[] }) {
 
                     </div>
                 </div>
-                <div className='w-[50%] flex flex-col justify-between'>
+                <div className='w-full lg:w-[50%] flex flex-col gap-16 justify-between'>
                     <Subscribe />
                     <div className='flex flex-col gap-4'>
                         <p className='font-bold text-zinc-200'>Follow us on social media</p>

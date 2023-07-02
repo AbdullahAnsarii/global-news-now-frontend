@@ -6,7 +6,7 @@ import Script from "next/script";
 export async function Header({ headerLinks }: { headerLinks: Category[] }) {
 
     return (
-        <header className='border-b border-zinc-200'>
+        <header className='border-b border-zinc-200 px-4 xl:px-0'>
             <section className='flex justify-between max-w-7xl mx-auto py-2'>
                 <div className='flex items-center gap-6 max-w-[800px] overflow-hidden'>
                     <Link href="/">
@@ -19,7 +19,12 @@ export async function Header({ headerLinks }: { headerLinks: Category[] }) {
                     </Link>
                     <div className='h-full w-[1px] bg-zinc-200' />
                     {headerLinks.slice(0, 5).map(link => (
-                        <Link key={link.id} className='hover:text-zinc-600 whitespace-nowrap text-sm' href={`/${link.slug}`}>
+                        <Link key={link.id} className='hover:text-zinc-600 whitespace-nowrap text-sm hidden md:inline' href={`/${link.slug}`}>
+                            {link.title}
+                        </Link>
+                    ))}
+                    {headerLinks.slice(0, 2).map(link => (
+                        <Link key={link.id} className='hover:text-zinc-600 whitespace-nowrap text-sm inline md:hidden' href={`/${link.slug}`}>
                             {link.title}
                         </Link>
                     ))}
@@ -33,7 +38,16 @@ export async function Header({ headerLinks }: { headerLinks: Category[] }) {
                             <p className="block px-4 py-2 text-sm text-zinc-700 font-bold ">More categories</p>
                         </div>
                         {headerLinks.slice(5).map(link => (
-                            <ul key={link.id} className="text-sm text-zinc-700 " aria-labelledby="dropdownMenuIconHorizontalButton">
+                            <ul key={link.id} className="text-sm text-zinc-700  hidden md:inline" aria-labelledby="dropdownMenuIconHorizontalButton">
+                                <li>
+                                    <Link key={link.id} className='whitespace-nowrap block px-4 py-2 text-sm' href={`/${link.slug}`}>
+                                        {link.title}
+                                    </Link>
+                                </li>
+                            </ul>
+                        ))}
+                        {headerLinks.slice(2).map(link => (
+                            <ul key={link.id} className="text-sm text-zinc-700 inline md:hidden" aria-labelledby="dropdownMenuIconHorizontalButton">
                                 <li>
                                     <Link key={link.id} className='whitespace-nowrap block px-4 py-2 text-sm' href={`/${link.slug}`}>
                                         {link.title}
@@ -46,7 +60,7 @@ export async function Header({ headerLinks }: { headerLinks: Category[] }) {
 
                 </div>
 
-                <div className='flex items-center gap-6'>
+                <div className='items-center gap-6 hidden lg:flex'>
 
                     <form>
                         <div className="relative">

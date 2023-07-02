@@ -42,7 +42,7 @@ export default async function BlogPage({ categorySlug, blogSlug }: { categorySlu
     latestBlogs = data[2];
 
     return (
-        <section className="my-8 max-w-7xl mx-auto text-zinc-800">
+        <section className="my-8 max-w-7xl mx-auto text-zinc-800 px-4 xl:px-0">
             <nav className="flex" aria-label="Breadcrumb">
                 <ol className="inline-flex items-center space-x-1 md:space-x-3">
                     <li className="inline-flex items-center">
@@ -64,8 +64,8 @@ export default async function BlogPage({ categorySlug, blogSlug }: { categorySlu
                     </li>
                 </ol>
             </nav>
-            <div className="w-full flex gap-12 my-8">
-                <div className="w-[60%]">
+            <div className="w-full flex flex-col md:flex-row gap-8 my-8">
+                <div className="w-full md:w-[70%]">
                     <div className='relative h-[200px] md:h-[360px] w-full'>
                         <Image src={blog?.image || ""} alt={blog?.title || ""} title={blog?.title} fill style={{
                             objectFit: 'cover',
@@ -77,7 +77,7 @@ export default async function BlogPage({ categorySlug, blogSlug }: { categorySlu
                     <div dangerouslySetInnerHTML={{__html: blog?.content || ""}} />
                 </div>
 
-                <div className="w-[40%] flex flex-col gap-10">
+                <div className="w-full md:w-[30%] flex flex-col gap-10">
                     <div className="border-l-4 border-zinc-800">
                         <p className="p-2">Latest Articles</p>
                     </div>
