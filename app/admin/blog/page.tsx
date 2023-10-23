@@ -1,6 +1,6 @@
 "use client"
 import dynamic from "next/dynamic";
-import { BASE_URL_SERVER } from "@/common";
+import { BASE_URL_SERVER, IMAGE_KIT_PUBLIC_KEY, IMAGE_KIT_URL } from "@/common";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { slugify } from "@/helpers/slugify";
@@ -19,9 +19,9 @@ export default function Blog() {
     const [categoryId, setCategoryId] = useState<number>();
     const [message, setMessage] = useState("");
     const router = useRouter();
-    const urlEndpoint = 'https://ik.imagekit.io/globalnewsnow';
-    const publicKey = 'public_Z45LJa4cyU3KNfm0AD7JQss7Fhg=';
-    const authenticationEndpoint = 'https://globalnewsnow.cyclic.app/auth/imgkit';
+    const urlEndpoint = IMAGE_KIT_URL;
+    const publicKey = IMAGE_KIT_PUBLIC_KEY;
+    const authenticationEndpoint = BASE_URL_SERVER + 'auth/imgkit';
 
     const onError = (err: any) => {
         console.log("Error", err);
