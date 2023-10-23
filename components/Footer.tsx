@@ -10,7 +10,7 @@ export async function Footer({ headerLinks }: { headerLinks: Category[] }) {
             <section className="flex flex-col lg:flex-row gap-16 max-w-7xl mx-auto py-6">
                 <div className='w-full lg:w-[50%] flex flex-col gap-16'>
                     <div className='relative h-[140px] w-[140px]'>
-                        <Image src="/logo-white.svg" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
+                        <Image src="/gnn-white.svg" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
                             objectFit: 'contain',
                             borderRadius: '0.25rem'
                         }} />

@@ -11,7 +11,7 @@ export async function Header({ headerLinks }: { headerLinks: Category[] }) {
                 <div className='flex items-center gap-6 max-w-[800px] overflow-hidden'>
                     <Link href="/">
                         <div className='relative h-[60px] w-[60px]'>
-                            <Image src="/logo-black.svg" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
+                            <Image src="/gnn-black.svg" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
                                 objectFit: 'contain',
                                 borderRadius: '0.25rem'
                             }} />
