@@ -1,4 +1,4 @@
-import { FACEBOOK_URL, INSTAGRAM_URL, TWITTER_URL } from "@/common";
+import { FACEBOOK_URL, INSTAGRAM_URL, MAIL_URL } from "@/common";
 import { Category } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,7 @@ export async function Footer({ headerLinks }: { headerLinks: Category[] }) {
             <section className="flex flex-col lg:flex-row gap-16 max-w-7xl mx-auto py-6">
                 <div className='w-full lg:w-[50%] flex flex-col gap-16'>
                     <div className='relative h-[140px] w-[140px]'>
-                        <Image src="/gnn-white.svg" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
+                        <Image src="/ngn.png" alt="Global News Now Logo" title="Global News Now Logo" fill style={{
                             objectFit: 'contain',
                             borderRadius: '0.25rem'
                         }} />
@@ -33,14 +33,14 @@ export async function Footer({ headerLinks }: { headerLinks: Category[] }) {
                     <div className='flex flex-col gap-4'>
                         <p className='font-bold text-zinc-200'>Follow us on social media</p>
                         <div className='flex gap-8'>
-                            <Link href={INSTAGRAM_URL}>
+                            <Link target="__blank" href={INSTAGRAM_URL}>
                                 <Image src="/instagram.svg" alt="Instagram Logo" title="Instagram Logo" width="32" height="32" />
                             </Link>
-                            <Link href={FACEBOOK_URL}>
+                            <Link target="__blank" href={FACEBOOK_URL}>
                                 <Image src="/facebook.svg" alt="Facebook Logo" title="Facebook Logo" width="32" height="32" />
                             </Link>
-                            <Link href={TWITTER_URL}>
-                                <Image src="/twitter.svg" alt="Twitter Now Logo" title="Twitter Now Logo" width="32" height="32" />
+                            <Link target="__blank" href={MAIL_URL}>
+                                <Image src="/email.svg" alt="Mail Logo" title="Mail Logo" width="36" height="36" />
                             </Link>
                         </div>
                     </div>
